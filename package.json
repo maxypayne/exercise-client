@@ -11,7 +11,7 @@
     "start" : "node server.js",
     "build": "ng build --aot true --build-optimizer true --configuration production --optimization true",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
