@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppService } from "./app.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  $isLog: Subscription;
+  isLog = false;
+  constructor(private app: AppService) {
+    this.$isLog = this.app.isLog.subscribe((isLog: boolean) => {
+      this.isLog = isLog;
+    });
+  }
+  handleLink(id: string): void {
+    if (id === 'logout') {
+      this.app.logout();
+      this.isLog = false;
+    } else {
+      this.app.goTo(`/${id}`);
+    }
+  }
 }

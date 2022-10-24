@@ -1,0 +1,42 @@
+<div id="movies">
+  <div class="search-container">
+    <div class="search-container-left">
+      <input type="text" id="search" (keyup)="handleSearch($event)" placeholder="Search...">
+    </div>
+    <div class="search-container-right">
+      <button (click)="sortByYear()">Sort by year</button>
+      <button class="ml30" (click)="addNewMovie()">New movie</button>
+    </div>
+  </div>
+  <div class="movies-container">
+    <div class="movie" *ngFor="let movie of movies" (click)="selectMovie(movie.id)">
+      <h2>{{movie.originalTitle}}</h2>
+      <p>{{movie.primaryTitle}}</p>
+      <p>{{movie.startYear}}</p>
+    </div>
+    <p class="nothing" *ngIf="!movies.length">Nothing found</p>
+  </div>
+  <button *ngIf="movies.length" class="mt30" (click)="getMovies()">Load more movies</button>
+  <div class="popup-wrapper" *ngIf="isPopupOpen" (click)="closePopup($event)">
+    <div class="popup-container">
+      <div class="movie-container" *ngIf="showMovie && movie">
+        <p class="popup-title">Movie</p>
+        <h1>Original : {{this.movie.originalTitle}}</h1>
+        <p>Primary : {{this.movie.primaryTitle}}</p>
+        <p>Year : {{movie.startYear}}</p>
+      </div>
+      <div class="add-container" *ngIf="newMovie">
+        <h2 class="popup-title">Add new movie</h2>
+        <form [formGroup]="form">
+          <input class="inputHandler mb20" type="text" id="originalTitle" [formControlName]="'originalTitle'" placeholder="Batman old">
+          <input class="inputHandler" type="text" id="primaryTitle" [formControlName]="'primaryTitle'" placeholder="Batman">
+          <input class="inputHandler" type="text" id="startYear" [formControlName]="'startYear'" placeholder="1900">
+          <div class="error">{{errMessage}}</div>
+          <button type="submit" class="submit" [disabled]="!form.valid" (click)="addMovie()">Add movie</button>
+        </form>
+      </div>
+      <div class="close-popup" (click)="closePopup($event)">X</div>
+    </div>
+  </div>
+</div>
+

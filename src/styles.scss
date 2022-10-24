@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth
+}
+body {
+  font-family: 'Roboto Light', sans-serif, Arial;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a263d;
+}
+a, article, aside, body, div, fieldset, footer, form, h1, h2, h3, h4, h5, header, html, img, input, label, li, menu, nav, ol, p, section, span, strong, table, tbody, td, tfoot, th, thead, tr, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline
+}
+button {
+  background-color: transparent;
+  border-width: 0
+}
+ol, ul {
+  list-style: none
+}
+input {
+  -webkit-appearance: none;
+  box-shadow: none;
+  background-color: transparent;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #818BA5;
+  font-size: 16px;
+  padding: 0 10px;
+  color: white;
+  ::placeholder {
+    color: #384660;
+  }
+}
+

@@ -1,0 +1,97 @@
+@import "../../../variables";
+#signup {
+  .error {
+    color: $red;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  width: 100%;
+  min-height: 100vh;
+  background-color: $smartHouse;
+  display: flex;
+  .signupLleft {
+    width: calc(100% - 500px);
+    background-image: url("../../../assets/login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    background-position: right;
+    display: flex;
+    position: relative;
+    object-fit: contain;
+    .logo {
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      top: 60px;
+      left: 100px;
+    }
+    .signupText {
+      font-size: 20px;
+      color: white;
+      margin-left: 100px;
+    }
+  }
+  .signupRight {
+    width: 500px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .signupRightContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      .inputLabel {
+        color: white;
+        margin-bottom: 5px;
+      }
+      .inputHandler {
+        width: 100%;
+        &.mb20 {
+          margin-bottom: 20px;
+        }
+      }
+      .submit {
+        background-color: #358ef7;
+        width: 100%;
+        border-radius: 3px;
+        color: white;
+        padding: 10px 0;
+        margin-top: 20px;
+        cursor: pointer;
+        &:disabled {
+          opacity: 0.4;
+          cursor: default;
+        }
+      }
+      .forgot {
+        color: #677d94;
+        margin-top: 150px;
+        .reset {
+          color: $blue19;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+      .signupAccount {
+        color: $grey81;
+        margin-top: 30px;
+        .signLink {
+          color: $blue19;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+      .row1, .row2 {
+        font-size: 30px;
+        color: white;
+        margin-bottom: 20px;
+      }
+      .formContainer {
+        width: 100%;
+      }
+    }
+  }
+}

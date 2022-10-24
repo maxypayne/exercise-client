@@ -1,0 +1,99 @@
+@import "../../variables";
+#movies {
+  padding: 50px 30px 30px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  .nothing {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+  }
+  .input-container {
+    color: white;
+    position: relative;
+  }
+  .mt30 {
+    margin-top: 30px;
+  }
+  .ml30 { margin-left: 30px }
+  .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .search-container-left {
+      display: flex;
+      align-items: center;
+      input {
+        width: 250px;
+      }
+    }
+  }
+  .movies-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    .movie {
+      width: 30%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid $grey81;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .popup-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.8);
+    .popup-container {
+      position: relative;
+      border-radius: 30px;
+      padding: 50px;
+      background-color: #1c2231;
+      .popup-title {
+        font-size: 24px;
+        color:white;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .add-container form {
+        width: 300px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        input {
+          width: 100%;
+        }
+      }
+      .movie-container {
+        color: white;
+      }
+    }
+    .close-popup {
+      font-size: 20px;
+      position: absolute;
+      cursor: pointer;
+      right: 20px;
+      color: $red;
+      top: 20px;
+    }
+  }
+}
+button {
+  padding: 20px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: darkorange;
+}

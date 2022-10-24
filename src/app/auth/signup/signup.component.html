@@ -1,0 +1,28 @@
+<div id="signup">
+  <div class="signupLleft">
+    <div class="logo"><b>Free movies</b></div>
+    <div class="signupText">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti dicta, dignissimos ducimus fuga,
+      id illum in molestiae odio quas rem sed totam voluptatibus. Amet aspernatur eum itaque quos rem.
+    </div>
+  </div>
+  <div class="signupRight">
+    <div class="signupRightContent">
+      <div class="row2">Sign in</div>
+      <div class="formContainer">
+        <form [formGroup]="form">
+          <input class="inputHandler mb20" type="text" id="email" formControlName="email" placeholder="example@email.com">
+          <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
+          <div class="error">{{errMessage}}</div>
+          <!-- <app-spinner *ngIf="isPending"></app-spinner> -->
+          <button type="submit" class="submit" [disabled]="!form.valid" (click)="signup()">Sign in</button>
+        </form>
+      </div>
+      <div class="signupAccount">
+        <span>Already have an account?</span>
+        <span class="signLink" [routerLink]="['/login']">Login</span>
+      </div>
+    </div>
+  </div>
+</div>
+
