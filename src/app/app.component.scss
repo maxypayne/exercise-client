@@ -4,14 +4,26 @@ header {
   justify-content: space-between;
   padding: 20px 30px;
   align-items: center;
-  color: $grey81;
   border-bottom: 1px solid $grey81;
+  .logo {
+    color: $grey81;
+  }
   .menu {
     display: flex;
     align-items: center;
     gap: 20px;
+    .icon-sign-out {
+      font-size: 20px;
+    }
     li {
+      display: flex;
+      align-items: center;
+      color: $red;
+      font-weight: bold;
       cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }

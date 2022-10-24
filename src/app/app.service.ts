@@ -51,11 +51,9 @@ export class AppService {
     localStorage.removeItem(this.keys.jwtTime);
   }
   goTo(path: string, params?: Params) {
-    if (params) {
-      this.router.navigate([path], { queryParams: params }).catch();
-    } else {
-      this.router.navigate([path]).catch();
-    }
+    this.router.navigate([path], params ? { queryParams: params } : {})
+      .then(() => window.scroll(0, 0))
+      .catch((err) => {console.log(err)});
   }
   logout() {
     this.removeJwt();

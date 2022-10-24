@@ -14,7 +14,7 @@
           <input class="inputHandler mb20" type="text" id="email" formControlName="email" placeholder="example@email.com">
           <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
           <div class="error">{{errMessage}}</div>
-          <!-- <app-spinner *ngIf="isPending"></app-spinner> -->
+           <app-spinner *ngIf="isPending"></app-spinner>
           <button type="submit" class="submit" [disabled]="!form.valid" (click)="signup()">Sign in</button>
         </form>
       </div>

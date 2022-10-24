@@ -5,11 +5,12 @@
     </div>
     <div class="search-container-right">
       <button (click)="sortByYear()">Sort by year</button>
-      <button class="ml30" (click)="addNewMovie()">New movie</button>
+      <button class="ml30" (click)="addNewMovie()"><span class="icon-plus mr10"></span>New movie</button>
     </div>
   </div>
   <div class="movies-container">
     <div class="movie" *ngFor="let movie of movies" (click)="selectMovie(movie.id)">
+      <img class="movie-img" src="../../assets/batman.jpeg" alt="Image">
       <h2>{{movie.originalTitle}}</h2>
       <p>{{movie.primaryTitle}}</p>
       <p>{{movie.startYear}}</p>
@@ -28,14 +29,16 @@
       <div class="add-container" *ngIf="newMovie">
         <h2 class="popup-title">Add new movie</h2>
         <form [formGroup]="form">
-          <input class="inputHandler mb20" type="text" id="originalTitle" [formControlName]="'originalTitle'" placeholder="Batman old">
-          <input class="inputHandler" type="text" id="primaryTitle" [formControlName]="'primaryTitle'" placeholder="Batman">
-          <input class="inputHandler" type="text" id="startYear" [formControlName]="'startYear'" placeholder="1900">
+          <input class="inputHandler mb20" type="text" id="originalTitle" [formControlName]="'originalTitle'" placeholder="Original title">
+          <input class="inputHandler" type="text" id="primaryTitle" [formControlName]="'primaryTitle'" placeholder="Primary title">
+          <input class="inputHandler" type="text" id="startYear" [formControlName]="'startYear'" placeholder="Start year">
           <div class="error">{{errMessage}}</div>
           <button type="submit" class="submit" [disabled]="!form.valid" (click)="addMovie()">Add movie</button>
+          <app-spinner *ngIf="waitAddMovie"></app-spinner>
+          <p class="message" *ngIf="message">{{message}}</p>
         </form>
       </div>
-      <div class="close-popup" (click)="closePopup($event)">X</div>
+      <div class="close-popup"><span class="icon-cross" (click)="closePopup($event)"></span></div>
     </div>
   </div>
 </div>
